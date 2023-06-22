@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import Feedback from './Feedback/Feedback';
+import Stats from './Stats/Stats';
 
 export class App extends Component {
   state = {
@@ -17,12 +18,11 @@ export class App extends Component {
 
   render() {
     return (
-      <Feedback
-        increase={this.increase}
-        good={this.state.good}
-        neutral={this.state.neutral}
-        bad={this.state.bad}
-      />
+      <>
+        <h2>Stats</h2>
+        <Feedback increase={this.increase} />
+        <Stats params={this.state} />
+      </>
     );
   }
 }

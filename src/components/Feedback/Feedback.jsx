@@ -1,27 +1,20 @@
 import css from './Feedback.module.css';
-import Stats from 'components/Stats/Stats';
+// import Stats from 'components/Stats/Stats';
 import ButtonsSet from 'components/ButtonsSet/ButtonsSet';
 // import Section from 'components/Section/Section';
 import PropTypes from 'prop-types';
 
-const Feedback = ({ increase, good, neutral, bad }) => {
+const Feedback = ({ increase }) => {
   return (
     <div className={css.container}>
       <h2>Okay, leave feedback</h2>
       <ButtonsSet increase={increase} />
-      <h2>Stats</h2>
-      <Stats good={good} neutral={neutral} bad={bad} />
     </div>
   );
 };
 
 Feedback.propTypes = {
-  incGood: PropTypes.func,
-  incNeutral: PropTypes.func,
-  incBad: PropTypes.func,
-  good: PropTypes.number,
-  neutral: PropTypes.number,
-  bad: PropTypes.number,
+  increase: PropTypes.func,
 };
 
 export default Feedback;
