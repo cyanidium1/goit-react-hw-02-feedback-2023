@@ -3,35 +3,22 @@ import Feedback from './Feedback/Feedback';
 
 export class App extends Component {
   state = {
-    good: null,
-    neutral: null,
-    bad: null,
+    good: 0,
+    neutral: 0,
+    bad: 0,
   };
 
-  incGood = () => {
+  increase = option => {
     this.setState({
-      good: this.state.good + 1,
+      [option]: this.state[option] + 1,
     });
-  };
-
-  incNeutral = () => {
-    this.setState({
-      neutral: this.state.neutral + 1,
-    });
-  };
-
-  incBad = () => {
-    this.setState({
-      bad: this.state.bad + 1,
-    });
+    console.log(option);
   };
 
   render() {
     return (
       <Feedback
-        incGood={this.incGood}
-        incNeutral={this.incNeutral}
-        incBad={this.incBad}
+        increase={this.increase}
         good={this.state.good}
         neutral={this.state.neutral}
         bad={this.state.bad}

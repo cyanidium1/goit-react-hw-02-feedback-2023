@@ -4,11 +4,11 @@ import ButtonsSet from 'components/ButtonsSet/ButtonsSet';
 // import Section from 'components/Section/Section';
 import PropTypes from 'prop-types';
 
-const Feedback = ({ incGood, incNeutral, incBad, good, neutral, bad }) => {
+const Feedback = ({ increase, good, neutral, bad }) => {
   return (
     <div className={css.container}>
       <h2>Okay, leave feedback</h2>
-      <ButtonsSet incGood={incGood} incNeutral={incNeutral} incBad={incBad} />
+      <ButtonsSet increase={increase} />
       <h2>Stats</h2>
       <Stats good={good} neutral={neutral} bad={bad} />
     </div>
