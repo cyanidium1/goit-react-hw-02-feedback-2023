@@ -2,10 +2,6 @@ import css from './Stats.module.css';
 // import PropTypes from 'prop-types';
 
 const Stats = ({ params, total, percentage }) => {
-  if (!params.good && !params.neutral && !params.bad) {
-    return <p>No stats</p>;
-  }
-
   return (
     <div className={css.list}>
       <p className={css.item}>Good: {params.good}</p>

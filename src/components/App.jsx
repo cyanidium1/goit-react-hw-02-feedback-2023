@@ -29,11 +29,15 @@ export class App extends Component {
       <>
         <h2>Stats</h2>
         <Feedback increase={this.increase} />
-        <Stats
-          params={this.state}
-          total={this.total()}
-          percentage={this.percentage()}
-        />
+        {!this.state.good && !this.state.neutral && !this.state.bad ? (
+          <p>No stats</p>
+        ) : (
+          <Stats
+            params={this.state}
+            total={this.total()}
+            percentage={this.percentage()}
+          />
+        )}
       </>
     );
   }
