@@ -15,16 +15,21 @@ export class App extends Component {
     });
   };
 
-  total = () => {
-    return this.state.good + this.state.neutral + this.state.bad;
+  countTotal = () => {
+    return Object.values(this.state).reduce(
+      (partialSum, a) => partialSum + a,
+      0
+    );
   };
-  percentage = () => {
+  countPercentage = () => {
     return Math.round(
       (this.state.good / (this.state.good + this.state.bad)) * 100
     );
   };
 
   render() {
+    const total = this.countTotal();
+    const percentage = this.countPercentage();
     return (
       <>
         <h2>Stats</h2>
@@ -32,11 +37,7 @@ export class App extends Component {
         {!this.state.good && !this.state.neutral && !this.state.bad ? (
           <p>No stats</p>
         ) : (
-          <Stats
-            params={this.state}
-            total={this.total()}
-            percentage={this.percentage()}
-          />
+          <Stats params={this.state} total={total} percentage={percentage} />
         )}
       </>
     );
