@@ -4,11 +4,11 @@ import ButtonsSet from 'components/ButtonsSet/ButtonsSet';
 // import Section from 'components/Section/Section';
 import PropTypes from 'prop-types';
 
-const Feedback = ({ increase }) => {
+const Feedback = ({ increase, options }) => {
   return (
     <div className={css.container}>
       <h2>Okay, leave feedback</h2>
-      <ButtonsSet increase={increase} />
+      <ButtonsSet increase={increase} options={options} />
     </div>
   );
 };

@@ -30,10 +30,11 @@ export class App extends Component {
   render() {
     const total = this.countTotal();
     const percentage = this.countPercentage();
+    const options = Object.keys(this.state);
     return (
       <>
         <h2>Stats</h2>
-        <Feedback increase={this.increase} />
+        <Feedback increase={this.increase} options={options} />
         {!this.state.good && !this.state.neutral && !this.state.bad ? (
           <p>No stats</p>
         ) : (
